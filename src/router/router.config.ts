@@ -1,19 +1,24 @@
-﻿export const RouterMap = [{
-    // path: "/",
-    // component: () => import(),
-    // redirect: '/login',
-    // children: [
-    //     {
-    //         path: "/home",
-    //         name: "Home",
-    //         component: () => import(),
-    //         meta: {
-    //             tabBar: true,
-    //             search: true,
-    //             navBar: false,
-    //             Auth: false
-    //         }
-    //
-    //     },
-    // ]
-}]
+﻿export const RouterMap = [
+    {
+        path: '/',
+        redirect: '/Home'
+    },//默认路由
+
+    {
+        path: "/login",
+        name: "Login",
+        component: () => import("@/views/Login/index.vue"),
+        meta: {
+            requiresAuth: false
+        }
+    },
+    {
+        path: "/home",
+        name: "Home",
+        component: () => import("../views/Layout/index.vue"),
+        meta: {
+            requiresAuth: true
+        },
+        children: []
+    }
+];

@@ -2,26 +2,33 @@
   <div class="box">
     <div class="box-center">
       <div class="center-left-bar">
-     <userInfoCard></userInfoCard>
-        <br>
-    
+     <userInfoCard/>
+     <RouterBar/>
       </div>
       <div class="center">
-        <span style="color: lightgray"> a simple blog just introduce myself.</span>
+
+        <router-view/>
+
+        <span style="color: lightgray">
+
+          a simple blog just introduce myself.
+        </span>
       </div>
       <div class="center-right-bar">
-<!--        <weatherCard></weatherCard>-->
+        <weatherCard></weatherCard>
       </div>
     </div>
-    <!--    <router-view/>-->
+
   </div>
 </template>
 
 
 <script setup lang="ts">
 import userInfoCard from "@/components/UserInfoCard/index.vue"
-// import weatherCard from "@/components/WeatherCard/index.vue"
-</script> 
+import weatherCard from "@/components/WeatherCard/index.vue"
+import RouterBar from "@/components/RouterBar/index.vue"
+
+</script>
 <style scoped>
 .box {
   width: 100%;

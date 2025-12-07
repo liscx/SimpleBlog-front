@@ -1,6 +1,7 @@
 {
   "name": "simpleblog-front",
   "version": "0.0.0",
+
   "private": true,
   "scripts": {
     "serve": "vite preview",
@@ -15,6 +16,7 @@
     "daisyui": "^5.4.3",
     "dart-sass": "^1.25.0",
     "mitt": "^3.0.1",
+    "nrm": "^2.1.0",
     "pinia": "^3.0.3",
     "roboto-fontface": "*",
     "tailwindcss": "^4.1.16",

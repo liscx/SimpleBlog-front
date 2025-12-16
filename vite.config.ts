@@ -1,6 +1,6 @@
-import { defineConfig } from 'vite'
+import {defineConfig} from 'vite'
 import vue from '@vitejs/plugin-vue'
-import { fileURLToPath, URL } from 'node:url'
+import {fileURLToPath, URL} from 'node:url'
 import tailwindcss from "@tailwindcss/vite";
 // https://github.com/vuetifyjs/vuetify-loader/tree/next/packages/vite-plugin
 import vuetify from 'vite-plugin-vuetify'
@@ -14,15 +14,14 @@ export default defineConfig({
     },
 
 
-
     resolve: {
-    alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
-    }
-  },
-  plugins: [
-      tailwindcss(),
-		vue(),
-		vuetify({ autoImport: true }),
-	],
+        alias: {
+            '@': fileURLToPath(new URL('./src', import.meta.url))
+        }
+    },
+    plugins: [
+        tailwindcss(),
+        vue(),
+        vuetify({autoImport: true}),
+    ],
 })

@@ -15,7 +15,7 @@
         </span>
       </div>
       <div class="center-right-bar">
-        <weatherCard></weatherCard>
+<!--        <weatherCard></weatherCard>-->
       </div>
     </div>
 

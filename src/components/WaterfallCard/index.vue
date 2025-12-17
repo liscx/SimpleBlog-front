@@ -14,15 +14,13 @@ const props = defineProps<{
     title: string,
     desc: string
   }
-
 }>()
 </script>
 
 
 <style scoped>
 #card-body {
-  min-height: 40px;
-
-
+  height: auto;
+  background-color: lightgray;
 }
 </style>

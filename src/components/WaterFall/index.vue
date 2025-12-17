@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <div id="hidden-card-list"
        ref="hiddenEle">
     <WaterFall v-for="item in mockData"
@@ -7,22 +7,10 @@
                :card-item="item"
                style="width: 200px"/>
   </div>
-  <div id="card-list" ref="cardList">
-    <TransitionGroup
-        v-for="(preCol, colIndex) in fourPieceIdList"
-        :key="colIndex"
-        name="fade-up"
-        tag="div"
-        class="pre-colum"
-    >
-      <WaterFall
-          v-for="(e,index) in preCol"
-          :key="e"
-          :card-item="mockData[e]"
-          :style="{ animationDelay: `${e * 0.1}s` }"
-      />
-    </TransitionGroup>
-
+  <div id="card-list">
+    <div class="pre-colum" v-for="preCol in fourPieceIdList.values()">
+      <WaterFall v-for="(e,index) in preCol" :key="e" :card-item="mockData[e]" />
+    </div>
   </div>
 
 
@@ -33,12 +21,10 @@ import {mockCards} from "@/tools/mockedData.ts";
 import {nextTick, onMounted, ref} from "vue";
 
 const hiddenEle = ref<HTMLElement | null>(null)
-const cardList = ref<HTMLElement | null>(null)
 const mockData = ref(mockCards);
 const fourPieceIdList = ref([[], [], [], []]);
 const totalHListPreColum = ref([{id: 0, h: 0}, {id: 1, h: 0}, {id: 2, h: 0}, {id: 3, h: 0}]);
-// const columnCount = ref(4)  // 动态列数
-
+const col = 6;
 
 onMounted(() => {
   calcHeight();
@@ -49,19 +35,20 @@ const calcHeight = async () => {
   await nextTick();
   await nextTick();
   await nextTick();
-  // initList();
+  initList();
   const eleList = hiddenEle.value;
   //数组为空则直接返回
   if (!eleList) return
   //拿一下元素的id-height串
   // noinspection TypeScriptUnresolvedReference
-  const hList = Array.from(eleList.children).map((c, index) => {
+  const hList = Array.from(eleList.children).map(c => {
     return {
-      id: index,
+      id: (c as HTMLElement).dataset.id,
       h: (c as HTMLElement).getBoundingClientRect().height
     }
   })
-  //贪心算法重分配
+
+//hList 均分四列
   hList.map(c => {
     const lowId = getMin(totalHListPreColum.value);
     fourPieceIdList.value[lowId].push(c.id);
@@ -73,13 +60,14 @@ const calcHeight = async () => {
   console.log(`totalHListPreColum`)
   console.log(totalHListPreColum.value)
 }
+const initList = () => {
+  for (let i = 0; i < col; i++) {
+    fourPieceIdList.value[i] = [];
+    totalHListPreColum.value[i] = {id: i, h: 0};
+  }
 
-// const updateColum = () => {
-//   const listEle = cardList.value;
-//   const width = (listEle as HTMLElement).getBoundingClientRect().width;
-//   const cardWidth = 230
-//   columnCount.value = Math.max(1, Math.floor(width / cardWidth))
-// }
+}
+
 
 //获取最矮元素列，即按照h升序排序
 const getMin = (totalHListPreColum: Array<any>) => {
@@ -96,18 +84,7 @@ const getMin = (totalHListPreColum: Array<any>) => {
   })
   return copyTotalHListPreColum[0].id
 }
-// 初始化列结构
-// const initList = () => {
-//   fourPieceIdList.value = Array.from({length: columnCount.value}, () => [])
-//   totalHListPreColum.value = Array.from({length: columnCount.value}, (_, i) => ({
-//     id: i,
-//     h: 0,
-//   }))
-// }
-// watch(cardList.value.getBoundingClientRect().width, async () => {
-//   console.log("trigger")
-//   updateColum();
-// });
+
 </script>
 
 
@@ -125,23 +102,8 @@ const getMin = (totalHListPreColum: Array<any>) => {
 #card-list {
   width: 100%;
   display: grid;
-  /*grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));*/
   grid-template-columns: 1fr 1fr 1fr 1fr;
   column-gap: 10px;
-}
-
-.fade-up-enter-active {
-  transition: opacity 0.4s ease, transform 0.4s ease;
-}
-
-.fade-up-enter-from {
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-.fade-up-enter-to {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .pre-colum {
@@ -149,7 +111,7 @@ const getMin = (totalHListPreColum: Array<any>) => {
   flex-wrap: wrap;
   justify-content: center;
   align-content: flex-start;
-  row-gap: 10px;
+  row-gap: 5px;
   min-width: 0;
 }
 </style>

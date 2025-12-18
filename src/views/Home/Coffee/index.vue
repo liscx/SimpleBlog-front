@@ -1,10 +1,13 @@
 <template>
+  <div id="waterFallRoot">
   <div id="hidden-card-list"
+   class="hidden-card-list"
        ref="hiddenEle">
     <WaterFall v-for="item in mockData"
                :key="item.id"
                :data-id="item.id"
                :card-item="item"
+
                style="width: 200px"/>
   </div>
   <div id="card-list" ref="cardList">
@@ -25,7 +28,7 @@
 
   </div>
 
-
+  </div>
 </template>
 <script setup lang="ts">
 import WaterFall from "@/components/WaterfallCard/index.vue"
@@ -67,7 +70,9 @@ const calcHeight = async () => {
     fourPieceIdList.value[lowId].push(c.id);
     totalHListPreColum.value[lowId].h = totalHListPreColum.value[lowId].h + c.h;
   })
+  //删除计算高度的节点
 
+  document.getElementById("waterFallRoot")?.removeChild(document.body.getElementsByClassName("hidden-card-list")[0])
   console.log(`fourPieceIdList:`)
   console.log(fourPieceIdList.value)
   console.log(`totalHListPreColum`)

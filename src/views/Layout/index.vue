@@ -3,7 +3,7 @@
     <div class="box-center media">
       <div class="center-left-bar">
        <div class="stick">
-        <userInfoCard c/>
+        <userInfoCard/>
         <RouterBar/>
        </div>
 
@@ -15,11 +15,6 @@
         </div>
 
         <router-view/>
-
-        <span style="color: lightgray">
-
-          a simple blog just introduce myself.
-        </span>
       </div>
       <div class="center-right-bar">
         <!--        <weatherCard></weatherCard>-->

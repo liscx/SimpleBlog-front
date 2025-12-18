@@ -2,8 +2,11 @@
   <div class="box">
     <div class="box-center">
       <div class="center-left-bar">
-     <userInfoCard/>
-     <RouterBar/>
+       <div class="stick">       
+        <userInfoCard c/>
+        <RouterBar/>
+       </div>
+
       </div>
       <div class="center">
 
@@ -15,7 +18,7 @@
         </span>
       </div>
       <div class="center-right-bar">
-<!--        <weatherCard></weatherCard>-->
+        <!--        <weatherCard></weatherCard>-->
       </div>
     </div>
 
@@ -32,7 +35,7 @@ import RouterBar from "@/components/RouterBar/index.vue"
 <style scoped>
 .box {
   width: 100%;
-  height: 100%;
+  height:auto;
   display: flex;
   justify-content: center;
   background-color: rgb(244, 246, 247);
@@ -42,24 +45,22 @@ import RouterBar from "@/components/RouterBar/index.vue"
     height: 100%;
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
-
     .center-left-bar {
       padding: 10px;
       border-right: 1px solid lightgray;
     }
-
     .center {
       padding: 20px;
-      
-
     }
-
     .center-right-bar {
-padding: 10px;      
-
+      padding: 10px;
     }
-
-
   }
+.stick{
+  position: sticky;
+  top: 20px;        
+  align-self: flex-start; 
+  
+}
 }
 </style>

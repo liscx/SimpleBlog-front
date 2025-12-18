@@ -19,7 +19,7 @@
           v-for="(e,index) in preCol"
           :key="e"
           :card-item="mockData[e]"
-          :style="{ animationDelay: `${e * 0.1}s` }"
+          :style="{ animationDelay: `${e * 0.08}s` }"
       />
     </TransitionGroup>
 
@@ -128,6 +128,7 @@ const getMin = (totalHListPreColum: Array<any>) => {
   /*grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));*/
   grid-template-columns: 1fr 1fr 1fr 1fr;
   column-gap: 10px;
+
 }
 
 .fade-up-enter-active {

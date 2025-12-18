@@ -5,22 +5,13 @@
       <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
       <title></title>
     </head>
-    <v-main>
+    <v-main style="width: 100%;height: 100%;">
       <router-view/>
     </v-main>
   </v-app>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
 
-export default defineComponent({
-  name: 'App',
 
-  data () {
-    return {
-      //
-    }
-  },
-})
 </script>

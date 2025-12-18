@@ -10,15 +10,15 @@
         cover
     ></v-img>
     <v-card-title>
-      userName
+      lix
     </v-card-title>
-
     <v-card-subtitle>
-      personal introduction
+      code farmer.
     </v-card-subtitle>
 
     <v-card-actions>
-      whats
+
+      DEEP DIVE
       <v-spacer></v-spacer>
 
       <v-btn
@@ -32,7 +32,8 @@
         <v-divider></v-divider>
 
         <v-card-text>
-          if you want to introduce yourself.
+         <span style="font-weight: 700">email:</span>
+          lx626159@163.com
         </v-card-text>
      </div>
     </v-expand-transition>
@@ -41,7 +42,9 @@
 
 </template>
 <script setup lang="ts">
+import {ref} from "vue";
 
+const show = ref(false)
 </script>
 
 

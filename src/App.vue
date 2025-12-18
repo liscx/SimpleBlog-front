@@ -15,3 +15,17 @@
 
 
 </script>
+
+<style>
+:root {
+  /* 自定义主题颜色变量 - 默认 light 模式 */
+  --custom-button-color: #f4ea2a; /* 黄色 */
+  --custom-button-hover-color: #f0d800; /* 稍深的黄色 */
+}
+
+[data-theme="dark"] {
+  /* dark 模式下的颜色 */
+  --custom-button-color: #ff69b4; /* 粉色 */
+  --custom-button-hover-color: #ff1493; /* 稍深的粉色 */
+}
+</style>

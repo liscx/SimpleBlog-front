@@ -11,7 +11,6 @@
             icon="mdi-alert"
             size="18"
         ></v-icon>
-
         Extreme Weather Alert
       </template>
     </v-card-item>

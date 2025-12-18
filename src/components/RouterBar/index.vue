@@ -25,14 +25,14 @@
 </template>
 
 <script setup lang="ts">
-import {useRouter, useRoute} from 'vue-router'
+import {useRouter} from 'vue-router'
 import {ref, onMounted, onUnmounted} from 'vue'
 
 const router = useRouter()
-const route = useRoute()
+
 
 const secStatus = ref(false)
-const show = ref(false)
+
 const leftBar = ref([
   {
     key: "Technology",
@@ -50,19 +50,12 @@ const leftBar = ref([
     key: "Sport",
     icon: ""
   },
-  {
-    key: "Favorites",
-    icon: ""
-  },
-  {
-    key: "Develop",
-    icon: ""
-  },
+
 ])
 
 // 监听用户输入序列
 const secretSequence = ref('')
-const targetSequence = '**'
+const targetSequence = 'lx'
 
 const handleKeyPress = (event: KeyboardEvent) => {
 
@@ -90,14 +83,7 @@ const handleKeyPress = (event: KeyboardEvent) => {
     }
   }
 }
-const handleShowAndIgnore = (key: String) => {
 
-  if (key == "Security") {
-    return "security-tabs";
-  }
-
-
-}
 
 onMounted(() => {
   window.addEventListener('keypress', handleKeyPress)

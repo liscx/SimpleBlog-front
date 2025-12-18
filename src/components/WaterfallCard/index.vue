@@ -1,7 +1,7 @@
 ﻿<template>
   <div class="card-item">
     <div class="card-img-box">
-      <img src="../../../public/5a388e05a9da12c2494045723d4b635f.jpg" class="card-img" :style="{ height: randomHeight + 'px' }">
+      <img src="../../../public/0585f71f7d419634a37b0022865b682a.jpg" class="card-img" :style="{ height: randomHeight + 'px' }">
     </div>
     <div class="font-box">
       <div class="title">{{ props.cardItem.title }}</div>

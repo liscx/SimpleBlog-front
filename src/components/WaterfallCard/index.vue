@@ -11,7 +11,7 @@
 </template>
 <script setup lang="ts">
 import {onMounted} from "vue";
-const baseHeights = [220, 260, 300]
+const baseHeights = [140, 200, 240]
 const randomHeight = baseHeights[Math.floor(Math.random() * baseHeights.length)]
 const props = defineProps<{
   cardItem: {

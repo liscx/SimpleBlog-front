@@ -2,21 +2,20 @@
   <div class="box">
     <div class="box-center media">
       <div class="center-left-bar">
-       <div class="stick">
-        <userInfoCard/>
-        <RouterBar/>
-       </div>
+        <div class="stick">
+          <userInfoCard/>
+          <RouterBar/>
+        </div>
 
       </div>
       <div class="center">
-        <div class="center-toolBar">
-
-          <ThemeToggle/>
-        </div>
-
+ 
         <router-view/>
       </div>
       <div class="center-right-bar">
+
+        <ThemeToggle class="stick"/>
+
         <!--        <weatherCard></weatherCard>-->
       </div>
     </div>
@@ -36,7 +35,7 @@ import RouterBar from "@/components/RouterBar/index.vue"
 <style scoped>
 .box {
   width: 100%;
-  height:1000px;
+  height: 1000px;
   display: flex;
   justify-content: center;
   //background-color: rgb(244, 246, 247);
@@ -46,30 +45,29 @@ import RouterBar from "@/components/RouterBar/index.vue"
     height: 100%;
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
-    .center-left-bar {
-      padding: 10px;
-      //border-right: 1px solid lightgray;
+    padding: 20px;
+    .center-left-bar{
+      margin-right: 30px;
     }
-    .center {
-      padding: 20px;
-    }
-    .center-right-bar {
-      padding: 10px;
+    .center-right-bar{
+      margin-left: 30px;
     }
   }
-.stick{
-  position: sticky;
-  top: 20px;
-  align-self: flex-start;
 
+  .stick {
+    position: sticky;
+    top: 20px;
+    align-self: flex-start;
+  }
 }
-}
+
 .center-toolBar {
   display: flex;
   justify-content: flex-end;
   height: 20px;
 
 }
+
 @media screen and (max-width: 600px) {
   .media {
     visibility: hidden;

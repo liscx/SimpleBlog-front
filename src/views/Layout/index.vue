@@ -19,11 +19,13 @@
         <!--        <weatherCard></weatherCard>-->
       </div>
     </div>
-
+<rain></rain>
   </div>
+  
 </template>
 
 <script setup lang="ts">
+import rain from "@/components/Rain/index.vue"
 // import toolBar from "@/components/ToolBar/index.vue"
 import ThemeToggle from "@/components/ToolBar/ThemeToggle/index.vue"
 import userInfoCard from "@/components/UserInfoCard/index.vue"

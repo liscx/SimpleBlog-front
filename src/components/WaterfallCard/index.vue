@@ -1,16 +1,20 @@
 ﻿<template>
+
   <div class="card-item">
     <div class="card-img-box">
-      <img src="../../../public/0585f71f7d419634a37b0022865b682a.jpg" class="card-img" :style="{ height: randomHeight + 'px' }">
+      <img src="../../../public/0585f71f7d419634a37b0022865b682a.jpg" class="card-img"
+           :style="{ height: randomHeight + 'px' }">
     </div>
     <div class="font-box">
       <div class="title">{{ props.cardItem.title }}</div>
       <div class="desc">{{ props.cardItem.desc }}</div>
     </div>
+
   </div>
 </template>
 <script setup lang="ts">
 import {onMounted} from "vue";
+
 const baseHeights = [140, 200, 240]
 const randomHeight = baseHeights[Math.floor(Math.random() * baseHeights.length)]
 const props = defineProps<{
@@ -39,13 +43,13 @@ onMounted(() => {
   height: auto;
   //background-color: lightgray;
   animation: card-fade-in 1s cubic-bezier(0.68, -0.25, 0.53, 1.38) both;
-
+  width: 200px;
 }
-
 
 
 .font-box {
   margin: 0 0 10px 0;
+
   .title {
     font-weight: 700;
   }
@@ -64,7 +68,7 @@ onMounted(() => {
 .card-img {
   border-radius: 5% 5% 0 0;
   width: 100%;
- 
+
 
 }
 

@@ -25,7 +25,7 @@ const props = defineProps<{
   }
 }>()
 onMounted(() => {
-  console.log(props.cardItem)
+  // console.log(props.cardItem)
 
 })
 </script>

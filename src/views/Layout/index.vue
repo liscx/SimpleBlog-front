@@ -1,34 +1,39 @@
 ﻿<template>
-  <div class="box">
-    <div class="box-center media">
+  <div class="box z-0">
+    <div class="box-center media z-2">
       <div class="center-left-bar">
         <div class="stick">
           <userInfoCard/>
           <RouterBar/>
         </div>
-
       </div>
       <div class="center">
-
+<!--        <toolBar></toolBar>-->
         <router-view/>
       </div>
       <div class="center-right-bar">
-
-        <ThemeToggle class="stick"/>
+        <toolBar></toolBar>
+        <!--        <ThemeToggle class="stick"/>
+                <VFXToggle/>-->
       </div>
     </div>
-    <floatedDownCanvas v-if="seasonType==1" :svg-path="sakuraSvgPath" svg-type="sakura" svg-height="25" svg-width="25" svg-num="30"/>
-    <floatedDownCanvas v-if="seasonType===2" :svg-path="sunflowerSvgPath" svg-type="sunflower" svg-height="35" svg-width="35" svg-num="15"/>
-    <floatedDownCanvas v-if="seasonType===3" :svg-path="leafSvgPath" svg-type="leaf" svg-height="80" svg-width="80" svg-num="15" svg-alpha="0.5"/>
+    <floatedDownCanvas v-if="seasonType==1" :svg-path="sakuraSvgPath" svg-type="sakura" svg-height="25" svg-width="25"
+                       svg-num="30"/>
+    <floatedDownCanvas v-if="seasonType===2" :svg-path="sunflowerSvgPath" svg-type="sunflower" svg-height="35"
+                       svg-width="35" svg-num="15"/>
+    <floatedDownCanvas v-if="seasonType===3" :svg-path="leafSvgPath" svg-type="leaf" svg-height="80" svg-width="80"
+                       svg-num="15" svg-alpha="0.5"/>
     <floatedDownCanvas v-if="seasonType===4" :svg-path="snowSvgPath" svg-type="snow" svg-num="55" :svg-speed="2"/>
   </div>
-
 </template>
 
 <script setup lang="ts">
 import floatedDownCanvas from "@/components/floatedDownCanvas/index.vue"
 
 import ThemeToggle from "@/components/ToolBar/ThemeToggle/index.vue"
+import VFXToggle from "@/components/ToolBar/VFXToggle/index.vue"
+import toolBar from "@/components/ToolBar/index.vue"
+
 import userInfoCard from "@/components/UserInfoCard/index.vue"
 import weatherCard from "@/components/WeatherCard/index.vue"
 import RouterBar from "@/components/RouterBar/index.vue"
@@ -87,7 +92,7 @@ onMounted(() => {
   height: 1000px;
   display: flex;
   justify-content: center;
-//background-color: rgb(244, 246, 247);
+  //background-color: rgb(244, 246, 247);
 
   .box-center {
     width: 1400px;
@@ -111,6 +116,15 @@ onMounted(() => {
     align-self: flex-start;
   }
 }
+
+.z-0 {
+  z-index: 0;
+}
+
+.z-2 {
+  z-index: 2;
+}
+
 
 .center-toolBar {
   display: flex;

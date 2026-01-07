@@ -1,16 +1,26 @@
 ﻿<template>
-  <canvas ref="canvasRef" class="rain-canvas"></canvas>
+  <!--全局特效canvas组件-->
+  <canvas ref="canvasRef" class="rain-canvas" v-show="isShow"></canvas>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import {ref, onMounted, onBeforeUnmount} from 'vue'
 import {useTheme} from "vuetify";
+
+const isShow = ref(true)
+import {getCurrentInstance} from 'vue';
+// mitt bus
+const {emitter} = getCurrentInstance()!.appContext.config.globalProperties;
+emitter.on('isShow', (data) => {
+  isShow.value = data
+  console.log(isShow.value)
+});
+
 
 // 定义 props：接收 SVG 图片路径或 SVG 字符串
 const props = defineProps({
   // SVG 图片的路径（URL）或 SVG 字符串，如果不提供则使用默认的线条图案
   svgPath: {
-    type: String,
     default: null
   },
   svgType: {
@@ -26,7 +36,7 @@ const props = defineProps({
   svgNum: {
     type: Number,
     default: 20
-  },  svgSpeed: {
+  }, svgSpeed: {
     type: Number,
     default: 0.75
   },
@@ -91,9 +101,11 @@ async function loadSvgImage() {
 
   try {
     // 如果 SVG 路径是 data URI 格式，直接使用
+    // noinspection TypeScriptUnresolvedReference
     if (props.svgPath.startsWith('data:')) {
       return new Promise((resolve, reject) => {
         const img = new Image()
+        // noinspection TypeScriptValidateTypes
         img.src = props.svgPath
         img.onload = () => {
           svgImage = img
@@ -166,8 +178,16 @@ function initRain() {
 function draw() {
   // 获取 canvas DOM 元素
   const canvas = canvasRef.value
+
+  const w = window.innerWidth
+  // 当前窗口的高度（像素）
+  const h = window.innerHeight
+
+  //  canvas 画布大小
+  canvas.style.width = w + 'px'
+  canvas.style.height = h + 'px'
   // 清空整个 canvas 画布，清除上一帧绘制的内容
-  ctx.clearRect(0, 0, canvas.width, canvas.height)
+  ctx.clearRect(0, 0, w, h)
 
   // 如果 SVG 图片已加载，使用图片模式绘制
   if (svgImage) {
@@ -290,7 +310,7 @@ onBeforeUnmount(() => {
 .rain-canvas {
   position: fixed;
   inset: 0;
-  z-index: 0; /* 不要 -1，先确保可见 */
+  z-index: 1;
   pointer-events: none;
 }
 </style>

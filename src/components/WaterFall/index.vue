@@ -1,4 +1,5 @@
 ﻿<template>
+<!--瀑布流-->
   <div id="hidden-card-list"
        ref="hiddenEle">
     <WaterFall v-for="item in mockData"

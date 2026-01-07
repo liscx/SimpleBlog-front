@@ -1,4 +1,5 @@
 ﻿<template>
+  <!--  天气组件-->
   <v-card
       class="mx-auto"
       max-width="368"
@@ -91,13 +92,13 @@
   </v-card>
 </template>
 <script setup lang="ts">
-import { ref } from 'vue'
+import {ref} from 'vue'
 
-const labels = { 0: 'SU', 1: 'MO', 2: 'TU', 3: 'WED', 4: 'TH', 5: 'FR', 6: 'SA' }
+const labels = {0: 'SU', 1: 'MO', 2: 'TU', 3: 'WED', 4: 'TH', 5: 'FR', 6: 'SA'}
 const forecast = [
-  { day: 'Tuesday', icon: 'mdi-white-balance-sunny', temp: '24\u00B0/12\u00B0' },
-  { day: 'Wednesday', icon: 'mdi-white-balance-sunny', temp: '22\u00B0/14\u00B0' },
-  { day: 'Thursday', icon: 'mdi-cloud', temp: '25\u00B0/15\u00B0' },
+  {day: 'Tuesday', icon: 'mdi-white-balance-sunny', temp: '24\u00B0/12\u00B0'},
+  {day: 'Wednesday', icon: 'mdi-white-balance-sunny', temp: '22\u00B0/14\u00B0'},
+  {day: 'Thursday', icon: 'mdi-cloud', temp: '25\u00B0/15\u00B0'},
 ]
 
 const expand = ref(false)

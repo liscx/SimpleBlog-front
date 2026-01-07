@@ -1,4 +1,5 @@
 ﻿<template>
+  <!--  页面左上方用户信息组件-->
   <v-card
       width="100%"
       class="mx-auto"
@@ -32,10 +33,10 @@
         <v-divider></v-divider>
 
         <v-card-text>
-         <span style="font-weight: 700">email:</span>
+          <span style="font-weight: 700">email:</span>
           lx626159@163.com
         </v-card-text>
-     </div>
+      </div>
     </v-expand-transition>
   </v-card>
   <br>

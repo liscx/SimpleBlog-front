@@ -1,4 +1,5 @@
 <template>
+<!-- 页面左侧菜单栏组件 -->
   <v-tabs
       direction="vertical"
       slider-color="primary"

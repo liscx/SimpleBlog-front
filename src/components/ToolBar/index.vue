@@ -1,36 +1,32 @@
-<template>
-  <div id="left-tool-bar">
-    <div class="bar-divide"></div>
-    <div class="bar-divide"></div>
-    <div class="bar-divide"></div>
-    <div class="bar-divide"></div>
+﻿<template>
+  <div class="tool-box stick">
+    <ThemeToggle/>
+    <VFXToggle/>
   </div>
 </template>
-
 <script setup lang="ts">
 
+import ThemeToggle from "@/components/ToolBar/ThemeToggle/index.vue";
+import VFXToggle from "@/components/ToolBar/VFXToggle/index.vue";
 </script>
 
+
 <style scoped>
-#left-tool-bar {
-  margin: 10px 0 10px 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  column-gap: 5px;
-
+.tool-box {
   width: 100%;
-  height: 20px;
-
-  .bar-divide {
-    width: 95%;
-    height: 95%;
-    background-color: var(--custom-button-color);
-    transition: background-color 0.3s ease;
-  }
-  
-  .bar-divide:hover {
-    background-color: var(--custom-button-hover-color);
-  }
+  height: 30px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  //border-top: 1px solid lightgray;
+  //border-bottom: 1px solid lightgray;
+  z-index: 3;
+  //background-color: lightgray;
 }
 
+.stick {
+  position: sticky;
+  top: 20px;
+  align-self: flex-start;
+}
 </style>

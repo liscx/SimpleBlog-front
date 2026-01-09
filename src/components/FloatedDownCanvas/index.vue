@@ -7,7 +7,7 @@
 import {ref, onMounted, onBeforeUnmount} from 'vue'
 import {useTheme} from "vuetify";
 
-const isShow = ref(true)
+const isShow = ref(false)
 import {getCurrentInstance} from 'vue';
 // mitt bus
 const {emitter} = getCurrentInstance()!.appContext.config.globalProperties;

@@ -17,18 +17,18 @@
                 <VFXToggle/>-->
       </div>
     </div>
-    <floatedDownCanvas v-if="seasonType==1" :svg-path="sakuraSvgPath" svg-type="sakura" svg-height="25" svg-width="25"
-                       svg-num="30"/>
-    <floatedDownCanvas v-if="seasonType===2" :svg-path="sunflowerSvgPath" svg-type="sunflower" svg-height="35"
-                       svg-width="35" svg-num="15"/>
-    <floatedDownCanvas v-if="seasonType===3" :svg-path="leafSvgPath" svg-type="leaf" svg-height="80" svg-width="80"
-                       svg-num="15" svg-alpha="0.5"/>
-    <floatedDownCanvas v-if="seasonType===4" :svg-path="snowSvgPath" svg-type="snow" svg-num="55" :svg-speed="2"/>
+<!--    <floatedDownCanvas v-if="seasonType==1" :svg-path="sakuraSvgPath" svg-type="sakura" svg-height="25" svg-width="25"-->
+<!--                       svg-num="30"/>-->
+<!--    <floatedDownCanvas v-if="seasonType===2" :svg-path="sunflowerSvgPath" svg-type="sunflower" svg-height="35"-->
+<!--                       svg-width="35" svg-num="15"/>-->
+<!--    <floatedDownCanvas v-if="seasonType===3" :svg-path="leafSvgPath" svg-type="leaf" svg-height="80" svg-width="80"-->
+<!--                       svg-num="15" svg-alpha="0.5"/>-->
+<!--    <floatedDownCanvas v-if="seasonType===4" :svg-path="snowSvgPath" svg-type="snow" svg-num="55" :svg-speed="2"/>-->
   </div>
 </template>
 
 <script setup lang="ts">
-import floatedDownCanvas from "@/components/floatedDownCanvas/index.vue"
+import floatedDownCanvas from "@/components/FloatedDownCanvas/index.vue"
 
 import ThemeToggle from "@/components/ToolBar/ThemeToggle/index.vue"
 import VFXToggle from "@/components/ToolBar/VFXToggle/index.vue"

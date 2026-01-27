@@ -1,0 +1,21 @@
+﻿/* 暗色主题 - 使用 data-theme 属性 */
+[data-theme="dark"] {
+    color-scheme: dark;
+    --card-shadow-color: black;
+    --card-text-secondary: rgba(255, 255, 255, 0.6);
+
+    /*font相关*/
+    font-family: "Monaspace Radon", "shoushu", serif;
+    font-feature-settings: "calt", "liga", "ss01", "ss02", "ss03";
+    font-feature-settings: "tnum", "onum", "pnum";
+
+
+}
+
+/* 兼容 Vuetify 的类名（如果同时存在） */
+.v-theme--dark,
+.v-application.v-theme--dark {
+    color-scheme: dark;
+    --card-shadow-color: rgba(255, 255, 255, 0);
+    --card-text-secondary: rgba(255, 255, 255, 0.6);
+}

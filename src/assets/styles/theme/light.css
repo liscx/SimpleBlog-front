@@ -1,0 +1,20 @@
+﻿/* 亮色主题 - 显式声明确保覆盖 */
+[data-theme="light"] {
+    
+    color-scheme: light;
+    --card-shadow-color: lightgray;
+    --card-text-secondary: lightgray;
+
+    /*font相关*/
+    font-family: "Monaspace Radon", "luoxia", serif;
+    font-feature-settings: "calt", "liga", "ss01", "ss02", "ss03";
+    font-feature-settings: "tnum", "onum", "pnum";
+
+}
+
+.v-theme--light,
+.v-application.v-theme--light {
+    color-scheme: light;
+    --card-shadow-color: lightgray;
+    --card-text-secondary: lightgray;
+}

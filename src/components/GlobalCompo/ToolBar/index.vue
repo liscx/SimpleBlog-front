@@ -6,8 +6,8 @@
 </template>
 <script setup lang="ts">
 
-import ThemeToggle from "@/components/ToolBar/ThemeToggle/index.vue";
-import VFXToggle from "@/components/ToolBar/VFXToggle/index.vue";
+import ThemeToggle from "@/components/GlobalCompo/ToolBar/ThemeToggle/index.vue";
+import VFXToggle from "@/components/GlobalCompo/ToolBar/VFXToggle/index.vue";
 </script>
 
 

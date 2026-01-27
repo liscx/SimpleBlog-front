@@ -28,11 +28,11 @@
 </template>
 
 <script setup lang="ts">
-import floatedDownCanvas from "@/components/FloatedDownCanvas/index.vue"
+import floatedDownCanvas from "@/components/GlobalCompo/FloatedDownCanvas/index.vue"
 
-import ThemeToggle from "@/components/ToolBar/ThemeToggle/index.vue"
-import VFXToggle from "@/components/ToolBar/VFXToggle/index.vue"
-import toolBar from "@/components/ToolBar/index.vue"
+import ThemeToggle from "@/components/GlobalCompo/ToolBar/ThemeToggle/index.vue"
+import VFXToggle from "@/components/GlobalCompo/ToolBar/VFXToggle/index.vue"
+import toolBar from "@/components/GlobalCompo/ToolBar/index.vue"
 
 import userInfoCard from "@/components/UserInfoCard/index.vue"
 import weatherCard from "@/components/WeatherCard/index.vue"

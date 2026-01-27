@@ -2,7 +2,7 @@
   <!--瀑布流卡片-->
   <div class="card-item">
     <div class="card-img-box">
-      <img src="../../../public/0585f71f7d419634a37b0022865b682a.jpg" class="card-img"
+      <img src="../../../../public/0585f71f7d419634a37b0022865b682a.jpg" class="card-img"
            :style="{ height: randomHeight + 'px' }">
     </div>
     <div class="font-box">

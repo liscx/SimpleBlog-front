@@ -31,7 +31,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import WaterFall from "@/components/WaterfallCard/index.vue"
+import WaterFall from "@/components/TechnologyCompo/WaterfallCard/index.vue"
 import {mockCards} from "@/tools/mockedData.ts";
 import {nextTick, onMounted, ref} from "vue";
 

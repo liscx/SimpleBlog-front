@@ -37,9 +37,14 @@ import {useTheme} from 'vuetify'
 
 const theme = useTheme()
 const toggleDarkMode = () => {
+  const html = document.documentElement
   // 根据当前主题状态切换
   const isDark = theme.global.current.value.dark
   theme.global.name.value = isDark ? 'light' : 'dark'
+  //切换全局自定义主题
+  html.setAttribute('data-theme', isDark ? 'light' : 'dark')
+  //切换浏览器预设主题
+  html.style.colorScheme = isDark ? 'light' : 'dark'
 
 }
 </script>

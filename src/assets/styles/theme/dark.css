@@ -1,16 +1,17 @@
 ﻿/* 暗色主题 - 使用 data-theme 属性 */
 [data-theme="dark"] {
     color-scheme: dark;
-    --card-shadow-color: black;
-    --card-text-secondary: rgba(255, 255, 255, 0.6);
 
+    --card-shadow-color: 5px 5px 6px 1px #010101FF;
+    --card-text-secondary: rgba(255, 255, 255, 0.6);
+    --card-bgc-color: #1C1C1EFF;
     /*font相关*/
     font-family: "Monaspace Radon", "shoushu", serif;
     font-feature-settings: "calt", "liga", "ss01", "ss02", "ss03";
     font-feature-settings: "tnum", "onum", "pnum";
-
-
+    --card-border: 1px solid #3D444DFF
 }
+
 
 /* 兼容 Vuetify 的类名（如果同时存在） */
 .v-theme--dark,

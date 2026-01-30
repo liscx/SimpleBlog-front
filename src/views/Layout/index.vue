@@ -58,6 +58,11 @@ onMounted(() => {
   } else {
     theme.global.name.value = "light"
   }
+  //设置除vuetify之外原生属性的主题状态
+  const html = document.documentElement
+  const isDark = theme.global.current.value.dark
+  html.setAttribute('data-theme', isDark ? 'dark' : 'light')
+  html.style.colorScheme = isDark ? 'dark' : 'light'
   //初始化季节
   switch (now.getMonth()) {
     case 3:

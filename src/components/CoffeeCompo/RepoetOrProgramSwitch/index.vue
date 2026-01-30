@@ -80,8 +80,9 @@ const updateSwitchType = (type: string) => {
     margin-top: 3px;
     height: 34px;
     z-index: -1;
-
     transition: transform 0.5s cubic-bezier(0.42, 0, 0.31, 1.39);
   }
+  
 }
+
 </style>

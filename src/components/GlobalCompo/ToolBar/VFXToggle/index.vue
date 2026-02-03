@@ -31,6 +31,6 @@ const handleClick = (status: boolean) => {
 .demo {
   width: 20px;
   height: 20px;
-  //background-color: pink;
+  background-color: pink;
 }
 </style>

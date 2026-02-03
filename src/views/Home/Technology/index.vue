@@ -1,5 +1,10 @@
 <template>
-  <div id="waterFallRoot">
+  <div v-if="CardType=='list'">
+    123
+  </div>
+
+  <div id="waterFallRoot" v-if="CardType=='card'">
+    <!--隐藏card 用于测量每个卡片的高度-->
     <div id="hidden-card-list"
          class="hidden-card-list"
          ref="hiddenEle">
@@ -25,15 +30,13 @@
             :style="{ animationDelay: `${e * 0.08}s` }"
         />
       </TransitionGroup>
-
     </div>
-
   </div>
 </template>
 <script setup lang="ts">
 import WaterFall from "@/components/TechnologyCompo/WaterfallCard/index.vue"
 import {mockCards} from "@/tools/mockedData.ts";
-import {nextTick, onMounted, ref} from "vue";
+import {getCurrentInstance, nextTick, onMounted, ref} from "vue";
 
 const hiddenEle = ref<HTMLElement | null>(null)
 const cardList = ref<HTMLElement | null>(null)
@@ -41,8 +44,12 @@ const mockData = ref(mockCards);
 const fourPieceIdList = ref([[], [], [], []]);
 const totalHListPreColum = ref([{id: 0, h: 0}, {id: 1, h: 0}, {id: 2, h: 0}, {id: 3, h: 0}]);
 // const columnCount = ref(4)  // 动态列数
-
-
+const CardType = ref("card")
+const {emitter} = getCurrentInstance()!.appContext.config.globalProperties;
+emitter.on('handleShowToggle', (data) => {
+  CardType.value = data
+  console.log(CardType.value)
+});
 onMounted(() => {
   calcHeight();
 })

@@ -2,12 +2,14 @@
   <div class="tool-box stick">
     <ThemeToggle/>
     <VFXToggle/>
+    <CardListToggle/>
   </div>
 </template>
 <script setup lang="ts">
 
 import ThemeToggle from "@/components/GlobalCompo/ToolBar/ThemeToggle/index.vue";
 import VFXToggle from "@/components/GlobalCompo/ToolBar/VFXToggle/index.vue";
+import CardListToggle from "@/components/GlobalCompo/ToolBar/CardListToggle/index.vue";
 </script>
 
 

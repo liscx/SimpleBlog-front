@@ -1,14 +1,15 @@
 <template>
   <div class="main-box">
     <div class="head-box stick">
-
       <switchBtn/>
-
     </div>
-    <div class="info-box">
+    <div class="info-box" v-if="CardType==='card'">
       <div class="card-box">
         <coffeeCard v-for="item in 4"/>
       </div>
+    </div>
+    <div v-if="CardType=='list'">
+      list Model
     </div>
   </div>
 </template>
@@ -16,6 +17,14 @@
 <script setup lang="ts">
 import CoffeeCard from "@/components/CoffeeCompo/CoffeeCard/index.vue"
 import switchBtn from "@/components/CoffeeCompo/RepoetOrProgramSwitch/index.vue"
+import {getCurrentInstance, onMounted, ref} from "vue";
+
+const CardType = ref("card")
+const {emitter} = getCurrentInstance()!.appContext.config.globalProperties;
+emitter.on('handleShowToggle', (data) => {
+  CardType.value = data
+  console.log(CardType.value)
+});
 
 </script>
 

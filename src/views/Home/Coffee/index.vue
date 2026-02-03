@@ -9,9 +9,6 @@
       <div class="card-box">
         <coffeeCard v-for="item in 4"/>
       </div>
-      <!--      <div class="table-box">-->
-      <!--        <CoffeeTable/>-->
-      <!--      </div>-->
     </div>
   </div>
 </template>
@@ -28,7 +25,7 @@ import switchBtn from "@/components/CoffeeCompo/RepoetOrProgramSwitch/index.vue"
 
 .stick {
   position: sticky;
-  top: 0;
+  top: 15px;
   align-self: flex-start;
 
 }
@@ -54,7 +51,7 @@ import switchBtn from "@/components/CoffeeCompo/RepoetOrProgramSwitch/index.vue"
 
 .head-box {
   //box-shadow: 10px 10px 10px 10px white;
-  padding-top: 20px;
+  //padding-top: 20px;
   padding-bottom: 10px;
   margin-bottom: 10px;
   z-index: 100;
@@ -63,7 +60,7 @@ import switchBtn from "@/components/CoffeeCompo/RepoetOrProgramSwitch/index.vue"
 
 [data-theme='light'] .head-box {
   background-color: white;
-  //border-bottom: 1px solid #c3c3d2;
+  border-bottom: 1px solid #e7e7e7;
   box-shadow: 0px -20px 0px 20px white;
 }
 

@@ -5,7 +5,8 @@
     --card-shadow-color: 5px 5px 6px 1px lightgray;
     /*--card-shadow-color: 3px 6px 6px 1px lightgray;*/
     --card-text-secondary: lightgray;
-    --card-bgc-color: rgba(245, 245, 245, 0.50);
+    /*--card-bgc-color: rgba(245, 245, 245, 0.50);*/
+    --card-bgc-color: rgba(234, 234, 234, 0.5);
     /*font相关*/
     font-family: "Monaspace Radon", "luoxia", serif;
     font-feature-settings: "calt", "liga", "ss01", "ss02", "ss03";

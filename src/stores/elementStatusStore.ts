@@ -5,7 +5,7 @@ import {defineStore} from 'pinia'
 
 export const elementStatusStore = defineStore('elementStatusStore', () => {
     const cardType = ref<string>("card")
-
+    
 
     function toggle() {
         if (cardType.value === "card") {

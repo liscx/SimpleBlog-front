@@ -45,14 +45,14 @@ const mockData = ref(mockCards);
 const fourPieceIdList = ref([[], [], [], []]);
 const totalHListPreColum = ref([{id: 0, h: 0}, {id: 1, h: 0}, {id: 2, h: 0}, {id: 3, h: 0}]);
 // const columnCount = ref(4)  // 动态列数
-
-
 import {storeToRefs} from 'pinia'
 //引入元素状态store
 import {elementStatusStore} from "@/stores/elementStatusStore.ts"
 //storeToRefs解构，使cardType保持响应性
 const store = elementStatusStore()
 const {cardType} = storeToRefs(store)
+
+
 
 // const cardType = ref("card")
 // const {emitter} = getCurrentInstance()!.appContext.config.globalProperties;

@@ -65,7 +65,7 @@ const {cardType} = storeToRefs(store)
 }
 
 .head-box {
-  background-color: var(--v-theme-background);
+  //background-color: var(--v-theme-background);
   //box-shadow: 10px 10px 10px 10px white;
   //padding-top: 20px;
   padding-bottom: 10px;
@@ -75,15 +75,15 @@ const {cardType} = storeToRefs(store)
 }
 
 [data-theme='light'] .head-box {
-  //background-color: white;
+  background-color: white;
   border-bottom: 1px solid #e7e7e7;
   box-shadow: 0px -20px 0px 20px white;
 }
 
 
 [data-theme='dark'] .head-box {
-  //background-color: #121212;
+  background-color: #010409FF;
   border-bottom: 1px solid #3D444DFF;
-  box-shadow: 0px -20px 0px 20px var(--v-theme-background);
+  box-shadow: 0px -20px 0px 20px #010409FF;
 }
 </style>

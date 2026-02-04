@@ -2,7 +2,7 @@
   <!--主题切换switch-->
   <div id="theme-ball" @click="toggleDarkMode">
     <div v-if="theme.global.current.value.dark" class="inner-themeBtn">
-      <span class="toggle-span">Light</span>
+<!--      <span class="toggle-span">Light</span>-->
       <svg
 
           t="1765612145464" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -14,7 +14,7 @@
 
     </div>
     <div v-else class="inner-themeBtn">
-      <span class="toggle-span">Dark</span>
+<!--      <span class="toggle-span">Dark</span>-->
       <svg
 
           t="1765611582809" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -55,7 +55,7 @@ const toggleDarkMode = () => {
   display: flex;
   flex-direction: row-reverse;
 
-  width: 100%;
+  width:30px;
   border-radius: 2%;
 }
 

@@ -9,7 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@esbuild/win32-x64": "^0.27.2",
     "@mdi/font": "5.9.55",
+    "@rollup/rollup-win32-x64-msvc": "^4.57.1",
     "@tailwindcss/vite": "^4.1.16",
     "axios": "^1.13.2",
     "daisyui": "^5.4.3",

@@ -2,24 +2,35 @@
   <div>
     <div v-if="showType=='card'">
       <!--切换到list模式-->
-      <div @click="handleToggle('list')" class="demo"></div>
+      <div @click="handleToggle()" class="demo">list</div>
     </div>
     <div v-else>
       <!--切换到card模式-->
-      <div @click="handleToggle('card')" class="demo"></div>
+      <div @click="handleToggle()" class="demo">card</div>
     </div>
   </div>
 </template>
 <script setup lang="ts">
-import {ref} from "vue";
+import {computed, ref} from "vue";
 import {getCurrentInstance} from 'vue';
 
-const {emitter} = getCurrentInstance()!.appContext.config.globalProperties;
-const showType = ref("")
-const handleToggle = (type: String) => {
-  emitter.emit('handleShowToggle', type);
-  showType.value = type
+
+import {storeToRefs} from 'pinia'
+//引入元素状态store
+import {elementStatusStore} from "@/stores/elementStatusStore.ts"
+//storeToRefs解构，使cardType保持响应性
+const store = elementStatusStore()
+const showType = computed(() => store.cardType)
+const handleToggle = () => {
+  store.toggle()
 }
+//
+// const {emitter} = getCurrentInstance()!.appContext.config.globalProperties;
+// const showType = ref("card")
+// const handleToggle = (type: String) => {
+//   emitter.emit('handleShowToggle', type);
+//   showType.value = type
+// }
 </script>
 
 
@@ -27,6 +38,6 @@ const handleToggle = (type: String) => {
 .demo {
   width: 20px;
   height: 20px;
-  background-color: green;
+  //background-color: green;
 }
 </style>

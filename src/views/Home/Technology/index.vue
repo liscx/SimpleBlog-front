@@ -1,9 +1,10 @@
 <template>
-  <div v-if="CardType=='list'">
-    123
+  <div v-if="cardType=='list'">
+    list
   </div>
 
-  <div id="waterFallRoot" v-if="CardType=='card'">
+  <div id="waterFallRoot" v-if="cardType=='card'">
+    card
     <!--隐藏card 用于测量每个卡片的高度-->
     <div id="hidden-card-list"
          class="hidden-card-list"
@@ -36,7 +37,7 @@
 <script setup lang="ts">
 import WaterFall from "@/components/TechnologyCompo/WaterfallCard/index.vue"
 import {mockCards} from "@/tools/mockedData.ts";
-import {getCurrentInstance, nextTick, onMounted, ref} from "vue";
+import {getCurrentInstance, nextTick, onMounted, ref, watch} from "vue";
 
 const hiddenEle = ref<HTMLElement | null>(null)
 const cardList = ref<HTMLElement | null>(null)
@@ -44,16 +45,29 @@ const mockData = ref(mockCards);
 const fourPieceIdList = ref([[], [], [], []]);
 const totalHListPreColum = ref([{id: 0, h: 0}, {id: 1, h: 0}, {id: 2, h: 0}, {id: 3, h: 0}]);
 // const columnCount = ref(4)  // 动态列数
-const CardType = ref("card")
-const {emitter} = getCurrentInstance()!.appContext.config.globalProperties;
-emitter.on('handleShowToggle', (data) => {
-  CardType.value = data
-  console.log(CardType.value)
-});
+
+
+import {storeToRefs} from 'pinia'
+//引入元素状态store
+import {elementStatusStore} from "@/stores/elementStatusStore.ts"
+//storeToRefs解构，使cardType保持响应性
+const store = elementStatusStore()
+const {cardType} = storeToRefs(store)
+
+// const cardType = ref("card")
+// const {emitter} = getCurrentInstance()!.appContext.config.globalProperties;
+// emitter.on('handleShowToggle', (data) => {
+//   cardType.value = data
+//   console.log(cardType.value)
+// });
 onMounted(() => {
   calcHeight();
 })
-
+watch(cardType, async () => {
+  if (cardType.value === 'card') {
+    await calcHeight();
+  }
+});
 const calcHeight = async () => {
   //等待页面渲染
   await nextTick();
@@ -78,7 +92,6 @@ const calcHeight = async () => {
     totalHListPreColum.value[lowId].h = totalHListPreColum.value[lowId].h + c.h;
   })
   //删除计算高度的节点
-
   document.getElementById("waterFallRoot")?.removeChild(document.body.getElementsByClassName("hidden-card-list")[0])
   console.log(`fourPieceIdList:`)
   console.log(fourPieceIdList.value)

@@ -3,33 +3,39 @@
     <div class="head-box stick">
       <switchBtn/>
     </div>
-    <div class="info-box" v-if="CardType==='card'">
+    <div class="info-box" v-if="cardType==='card'">
       <div class="card-box">
         <coffeeCard v-for="item in 4"/>
       </div>
     </div>
-    <div v-if="CardType=='list'">
+    <div v-if="cardType=='list'">
       list Model
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+
 import CoffeeCard from "@/components/CoffeeCompo/CoffeeCard/index.vue"
 import switchBtn from "@/components/CoffeeCompo/RepoetOrProgramSwitch/index.vue"
-import {getCurrentInstance, onMounted, ref} from "vue";
-
-const CardType = ref("card")
-const {emitter} = getCurrentInstance()!.appContext.config.globalProperties;
-emitter.on('handleShowToggle', (data) => {
-  CardType.value = data
-  console.log(CardType.value)
-});
+import {getCurrentInstance, ref} from "vue";
+import {storeToRefs} from 'pinia'
+//引入元素状态store
+import {elementStatusStore} from "@/stores/elementStatusStore.ts"
+//storeToRefs解构，使cardType保持响应性
+const store = elementStatusStore()
+const {cardType} = storeToRefs(store)
+//弃用emitt总线
+// const {emitter} = getCurrentInstance()!.appContext.config.globalProperties;
+// emitter.on('handleShowToggle', (data: any) => {
+//   cardType.value = data
+//   console.log(cardType.value)
+// });
 
 </script>
 
 
-<style scoped>
+<style scoped lang="scss">
 
 
 .stick {
@@ -59,6 +65,7 @@ emitter.on('handleShowToggle', (data) => {
 }
 
 .head-box {
+  background-color: var(--v-theme-background);
   //box-shadow: 10px 10px 10px 10px white;
   //padding-top: 20px;
   padding-bottom: 10px;
@@ -68,15 +75,15 @@ emitter.on('handleShowToggle', (data) => {
 }
 
 [data-theme='light'] .head-box {
-  background-color: white;
+  //background-color: white;
   border-bottom: 1px solid #e7e7e7;
   box-shadow: 0px -20px 0px 20px white;
 }
 
 
 [data-theme='dark'] .head-box {
-  background-color: #121212;
+  //background-color: #121212;
   border-bottom: 1px solid #3D444DFF;
-  box-shadow: 0px -20px 0px 20px #121212;
+  box-shadow: 0px -20px 0px 20px var(--v-theme-background);
 }
 </style>

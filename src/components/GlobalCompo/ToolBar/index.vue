@@ -20,6 +20,7 @@ import CardListToggle from "@/components/GlobalCompo/ToolBar/CardListToggle/inde
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  column-gap: 10px;
   //border-top: 1px solid lightgray;
   //border-bottom: 1px solid lightgray;
   z-index: 3;

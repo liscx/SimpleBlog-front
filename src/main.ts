@@ -7,12 +7,15 @@ import router from './router'
 import mitt from 'mitt';
 import vuetify from './plugins/vuetify'
 import {loadFonts} from './plugins/webfontloader'
+import {createPinia} from 'pinia'
 // import '@md-editor-v3/lib/style.css'
+const pinia = createPinia()
 loadFonts()
 const app = createApp(App);
 app.config.globalProperties.emitter = mitt();
 app
     .use(router)
     .use(vuetify)
+    .use(pinia)
     .mount('#app')
 　

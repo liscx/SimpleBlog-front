@@ -38,7 +38,7 @@ const handleClick = (status: boolean) => {
 .demo {
   width: 30px;
   height: 20px;
-  margin-bottom: 4px;
+  margin-bottom: 5px;
   //background-color: pink;
 }
 #VFXSwitchBtn{

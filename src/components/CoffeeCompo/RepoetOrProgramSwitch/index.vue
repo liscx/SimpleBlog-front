@@ -56,7 +56,7 @@ const updateSwitchType = async (item: { name: string; key: string; index: number
   setTimeout(() => {
     // 等待滑块移开当前元素后将元素设置为常规状态
     currentSwitchType.value = "Transit"
-  }, 200);
+  }, 50);
   setTimeout(() => {
     // 等待滑块移动到对应元素后再添加active效果
     currentSwitchType.value = item.key

@@ -4,7 +4,6 @@
   </div>
 
   <div id="waterFallRoot" v-if="cardType=='card'">
-    card
     <!--隐藏card 用于测量每个卡片的高度-->
     <div id="hidden-card-list"
          class="hidden-card-list"

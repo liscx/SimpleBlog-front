@@ -9,7 +9,7 @@
     <div v-else>
       <!--切换到card模式-->
       <div @click="handleToggle()" class="demo">
-        <oh-icon name="md-dashboard" :fill="iconColor"  scale="1.1"/>
+        <oh-icon name="md-dashboard-outlined" :fill="iconColor"  scale="1.1"/>
       </div>
     </div>
   </div>

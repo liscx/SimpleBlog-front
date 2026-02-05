@@ -1,8 +1,9 @@
 ﻿<template>
   <div class="tool-box stick">
-    <ThemeToggle/>
-    <VFXToggle/>
+    <oh-icon name="io-search-sharp" fill="black" scale="1.3" style="padding-right: 5px"/>
     <CardListToggle/>
+    <VFXToggle/>
+    <ThemeToggle/>
   </div>
 </template>
 <script setup lang="ts">
@@ -19,10 +20,12 @@ import CardListToggle from "@/components/GlobalCompo/ToolBar/CardListToggle/inde
   height: 50.5px;
   display: flex;
   align-items: center;
-  column-gap: 10px;
+  column-gap: 6px;
   padding-bottom: 10px;
   margin-bottom: 10px;
+  justify-content: flex-end;
   border-bottom: var(--card-border);
+  //flex-direction: row-reverse;
   //border-top: 1px solid lightgray;
   //border-bottom: 1px solid lightgray;
   z-index: 3;

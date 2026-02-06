@@ -11,6 +11,7 @@
     font-family: "Monaspace Radon", "luoxia", serif;
     font-feature-settings: "calt", "liga", "ss01", "ss02", "ss03";
     font-feature-settings: "tnum", "onum", "pnum";
-    --card-border:  1px solid #e7e7e7
+    --card-border: 1px solid #e7e7e7;
+    --search-box-border: 1px solid rgba(161, 160, 160, 0.48);
 }
 

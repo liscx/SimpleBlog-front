@@ -1,6 +1,6 @@
 ﻿<template>
   <div class="tool-box stick">
-    <oh-icon name="io-search-sharp" fill="black" scale="1.3" style="padding-right: 5px"/>
+    <generalSearch/>
     <CardListToggle/>
     <VFXToggle/>
     <ThemeToggle/>
@@ -11,6 +11,7 @@
 import ThemeToggle from "@/components/GlobalCompo/ToolBar/ThemeToggle/index.vue";
 import VFXToggle from "@/components/GlobalCompo/ToolBar/VFXToggle/index.vue";
 import CardListToggle from "@/components/GlobalCompo/ToolBar/CardListToggle/index.vue";
+import generalSearch from "@/components/GlobalCompo/ToolBar/GeneralSearchBtn/index.vue";
 </script>
 
 

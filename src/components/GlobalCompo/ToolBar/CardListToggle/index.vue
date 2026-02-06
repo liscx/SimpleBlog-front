@@ -3,17 +3,18 @@
     <div v-if="showType=='card'">
       <!--切换到list模式-->
       <div @click="handleToggle()" class="demo">
-        <oh-icon name="md-toc" :fill="iconColor" scale="1.4"/>
+        <oh-icon name="md-toc" :fill="iconColor" scale="1.5" style="padding-bottom: 5px"/>
       </div>
+    
     </div>
     <div v-else>
       <!--切换到card模式-->
       <div @click="handleToggle()" class="demo">
-        <oh-icon name="md-dashboard-outlined" :fill="iconColor"  scale="1.1"/>
+        <oh-icon name="md-spacedashboard-outlined" :fill="iconColor"  scale="1.3" style="padding-left: 4px"/>
       </div>
     </div>
   </div>
-</template>
+</template> 
 <script setup lang="ts">
 import {computed} from "vue";
 

@@ -9,7 +9,8 @@
     font-family: "Monaspace Radon", "shoushu", serif;
     font-feature-settings: "calt", "liga", "ss01", "ss02", "ss03";
     font-feature-settings: "tnum", "onum", "pnum";
-    --card-border: 1px solid #3D444DFF
+    --card-border: 1px solid #3D444DFF;
+    --search-box-border: 2px solid #3D444DFF;
 }
 
 

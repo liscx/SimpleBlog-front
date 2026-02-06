@@ -2,7 +2,7 @@
   <div id="VFXSwitchBtn">
     <div v-if="isShow">
       <!--关闭特效-->
-      <div @click="handleClick(false)" class="demo" style="padding-bottom: 26px">
+      <div @click="handleClick(false)" class="demo" style="padding-bottom: 28px">
         <oh-icon name="wi-cloudy" :fill="iconColor" scale="1.7" />
       </div>
     </div>
